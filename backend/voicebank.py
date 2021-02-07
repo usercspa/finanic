@@ -10,33 +10,22 @@ from bit import PrivateKeyTestnet
 
 
 ##wallet primary (btc)
-key = PrivateKeyTestnet('93PC6j7fK4FGyHg4DVXK9f8BnektLqPmyKThDjaJDDZZFbryRNE')
+key = PrivateKeyTestnet('redacted - see readme')
 ##wallet secondary (btc)
-key2 = PrivateKeyTestnet('91uwMrzeW2iWiV8eMj6Y1P8QZhy8Lh4SuD2PQzqxmRx8KSdfbVq')
-
-
-# idlemovie = 'media/idle_screen.mp4'
-# welcomemovie = 'media/welcome_screen_loop.mp4'
-# eye1movie = 'media/eyes_open.mp4'
-# eye2movie = 'media/eyes_close.mp4'
-# fortune1movie = 'media/fortune_1.mp4'
-# fortune2movie = 'media/fortune_2.mp4'
-
-## "sudo vlc " + idlemovie +" --no-video-title --loop --fullscreen" 
+key2 = PrivateKeyTestnet('redacted -  see readme')
 
 
 
-# omxp = Popen(['omxplayer',idlemovie])
 
 ##play idle sequence
 
 password = "coffee"
 password2 = "cookies"
-usernum = "13218775974"
+usernum = "1replacewithyournumberhere" ##phone number here
 passphrase = ""
 
 def generate_passphrase():
-    words = ['ccokie', 'tea', 'coffee', 'traffic']
+    words = ['cookie', 'tea', 'coffee', 'traffic']
     choice =  random.choice(words)
     return choice
 
