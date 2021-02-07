@@ -3,6 +3,7 @@ import pyttsx3
 import speech_recognition as sr
 import time
 from subprocess import Popen
+import twiliogenericsmssender
 
 from bit import PrivateKeyTestnet
 
@@ -31,6 +32,16 @@ key2 = PrivateKeyTestnet('91uwMrzeW2iWiV8eMj6Y1P8QZhy8Lh4SuD2PQzqxmRx8KSdfbVq')
 
 password = "coffee"
 password2 = "cookies"
+usernum = "13218775974"
+passphrase = ""
+
+def generate_passphrase():
+    words = ['ccokie', 'tea', 'coffee', 'traffic']
+    choice =  random.choice(words)
+    return choice
+
+
+
 
 maindelay = 5  #delay for main loop
 
@@ -184,7 +195,7 @@ while (1) :
     name = name.lower()
 
     if "transfer" in name:
-        outstring = "sent with voicewallet"
+        outstring = "sent with voicebank"
         txid = key2.send([('mkNdHY2qjNqrTG4vqvzYo7kfhqpq22jDeh',0.000001,'btc')],message=outstring)
         print(txid)
         speak("transaction complete.")
@@ -192,7 +203,7 @@ while (1) :
 
     if "balance" in name:
         # outstring = "sent with voicewallet"
-        bal = key2.get_balance('gbp')
+        bal = key2.get_balance('usd')
 
 
         speak("the balance in your account is " + str(bal) + " dollars")
@@ -201,6 +212,9 @@ while (1) :
     if "change" in name:
             # outstring = "sent with voicewallet"
         password, password2 = password2, password2
+
+
+        twiliogenericsmssender.sendtext(usernum, "your new pass phrase is " + password)
 
         speak("new passphrase generated. please check your text messages. ")
         continue
@@ -213,7 +227,7 @@ while (1) :
 
     
     
-    speak("sorry, Muntaser i did not understand this command ... ")
+    speak("sorry, i did not understand this command ... ")
 
 
 
